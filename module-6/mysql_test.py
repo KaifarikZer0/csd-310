@@ -10,10 +10,10 @@ secrets = dotenv_values(".env")
 
 """ database config object """
 config = {
-    "user": secrets["root"],
-    "password": secrets["5693"],
-    "host": secrets["root"],
-    "database": secrets["movies"],
+    "user": secrets["USER"],
+    "password": secrets["PASSWORD"],
+    "host": secrets["HOST"],
+    "database": secrets["DATABASE"],
     "raise_on_warnings": True #not in .env file
 }
 try:
@@ -40,5 +40,4 @@ except mysql.connector.Error as err:
 
 finally:
     """ close the connection to MySQL """
-
     db.close()
